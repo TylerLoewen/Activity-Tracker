@@ -14,6 +14,10 @@ The website is build using HTML, CSS, JavaScript, and jQuery. No web frameworks 
 
 The project should be compatible with most major web browsers (Chrome, Safari, Firefox)
 
+## Running
+
+To run the website in your browser [click here](https://tylerloewen.me/Health-and-Activity-Tracker/).
+
 ## Authors
 
 * **Tyler Loewen**: [GitHub](https://github.com/TylerLoewen)
