@@ -1,10 +1,10 @@
 # Health and Activity Tracker
 
-This website was created to learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional.
+This website was created to learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional. See the `Health and Activity Tracker Report.pdf` for full details on the process of creating this prototype.
 
 ## Getting Started
 
-The website can be run by navigating to the web address in the description of this repository.
+The website can be run by navigating to the web address in the description of this repository. The source code is found in the `/docs` folder
 
 ## Built With
 
