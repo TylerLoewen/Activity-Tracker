@@ -1,0 +1,131 @@
+/* 
+<Activity Tracker: A personal health and fitness tracker>
+Copyright (C) <2018>  <Tyler Loewen, Bradley Rey, Nahiyan Naim>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/gpl.txt>.
+
+Contact at tylerscottloewen@gmail.com
+*/
+
+body {
+    background-color: rgb(201, 213, 221);
+       font-family: "Lato", sans-serif;
+}
+
+div a:link {
+    color: black;
+    text-decoration: none;
+}
+div a:visited {
+    color: black;
+    text-decoration: none;
+}
+div a:hover {
+    color: black;
+    text-decoration: none;
+}
+div a:active {
+    color: black;
+    text-decoration: none;
+}
+
+/* position of back button */
+#back {
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+
+/* position of setting text */
+#help {
+    float: right;
+    margin-right: 65px;
+    font-size: 35px;
+    display: inline-block;
+    margin-top: -65px;
+}
+
+#content {
+    width: 95%;
+    margin: auto;
+    margin-top: 95px;
+}
+
+#content h1 {
+    font-size: 250%;
+    margin-bottom: 0;
+}
+
+#content p {
+    font-size: 140%;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+#streaks {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#goals {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+.mainContainer {
+   /* border: 2px solid green; */ 
+   text-align: center;
+}
+
+/* formats each card individually */
+.card {
+    width: 400px;
+    height: 325px;
+    position:absolute;
+    text-align: center;
+    background-color: rgb(245,245,245);
+    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 25px;
+    display: inline-block;
+    margin-top:-27px;
+    margin-left: -230px;
+}
+
+/* formats all of the cards together */
+.cards {
+    max-width: 100%;
+    display: block;
+    /* border: 2px solid white; */
+}
+
+.title {
+  color: rgb(30, 30, 30);
+  font-size: 18px;
+  line-height: 200%;
+}
+
+h1 {
+    margin-top: 0;
+}
+

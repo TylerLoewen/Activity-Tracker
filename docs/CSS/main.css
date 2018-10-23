@@ -1,0 +1,683 @@
+/* 
+<Activity Tracker: A personal health and fitness tracker>
+Copyright (C) <2018>  <Tyler Loewen, Bradley Rey, Nahiyan Naim>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/gpl.txt>.
+
+Contact at tylerscottloewen@gmail.com
+*/
+
+body {
+    background-color: rgb(201, 213, 221);
+    font-family: "Lato", sans-serif;
+}
+
+#Running {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#Walking {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#WaterIntake {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#CalorieIntake {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#HoursOfSleep {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+#newActivityContainer {
+    width: 400px;
+    height: 325px;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin: 25px;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* can add the "top" and "left" class to this element instead of calling top, left here */
+    left: 0;
+    background-color: rgb(245,245,245);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    white-space: nowrap;
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    /* color: #818181; */
+    display: block;
+    transition: 0.3s;
+    
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    /* color: #000000; */
+    color: rgb(150, 150, 150);
+    
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navButton {
+    font-size: 235%;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor:pointer;
+    color: black;
+}
+
+.navButton:hover {
+    color: rgb(125,125,125);
+    transition: 0.3s;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.mainContainer {
+   /* border: 2px solid green; */ 
+   text-align: center;
+}
+
+/* formats each card individually */
+.card {
+    width: 400px;
+    height: 325px;
+    position:absolute;
+    text-align: center;
+    background-color: rgb(245,245,245);
+    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 25px;
+    display: inline-block;
+    margin-top:-27px;
+    margin-left: -230px;
+}
+
+/* formats all of the cards together */
+.cards {
+    max-width: 100%;
+    display: block;
+    /* border: 2px solid white; */
+}
+
+.progress-bar-background {
+    width: 100%;
+    height: 40px;
+    background-color: #d9d9d9;
+    margin-top: 225px;
+    border-radius: 5px;
+    color: white;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 40px; /* To center it vertically */
+}
+.progress-bar {
+    width: 0%;
+    height: 40px;
+    background-color: #f48042;
+    margin-top: 225px;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 40px; /* To center it vertically */
+    color: white;
+    border-radius: 5px;
+}
+
+/* automatic margin of text inside of its relative container */
+.card p {
+    margin: auto;
+}
+
+.createNewActivityCard:hover {
+    background-color: rgb(205, 205, 205);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.createNewActivityText {
+    position:absolute;
+    height:75px; 
+    width: 350px;
+    line-height: 75px; /* should be the same as button height */
+    margin-left: -175px; /*should be half of the width property to be centered*/
+    margin-top: -37.5px;
+    font-size: 250%;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: black;
+}
+
+/* Name of the activity */
+.activityTitle {
+    position:absolute;
+    height:75px; 
+    width: 306px;
+    line-height: 75px; /* should be the same as button height */
+    margin-left: -153px; /*should be half of the width property to be centered*/
+    margin-top: -5px;
+    font-size: 225%;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: black;
+}
+
+/* button that takes up the left half of a card */
+.leftHalfButton {
+    border:2px solid black;
+    border-radius: 0;
+    outline: none;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height:70px; 
+    font-size: 200%;
+    width: 227px;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    color: rgb(14, 165, 6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* button that takes up the left half of a card */
+.leftHalfButton:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+/* properties of the add icon */
+.leftHalfButton i {
+    font-size: 75px;
+    margin-top: -3px;
+}
+ 
+/* button that takes up the right half of a card */
+.rightHalfButton {
+    border:2px solid black;
+    outline: none;
+    border-radius: 0;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height:70px; 
+    width: 227px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    font-size: 200%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* button that takes up the right half of a card */
+.rightHalfButton:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+
+/* properties of the settings icon */
+.rightHalfButton i {
+    font-size: 60px;
+    margin-top: 4px;
+}
+
+ /* button that takes up the whole width of a card */
+.fullWidthButton {
+    border:2px solid black;
+    border-radius: 0;
+    outline: none;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height:70px; 
+    width: 450px;
+    border-width: 2px 0 0 0;
+    line-height: 70px; /* should be the same as button height */
+    font-size: 200%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.deleteButton {
+    color: red;
+}
+
+.settingsButton {
+    color: rgb(100, 100, 100);
+}
+
+.saveButton {
+    color: rgb(59, 178, 28)
+}
+
+.addButton {
+    color: rgb(59, 178, 28)
+}
+
+.nextButton {
+    color: rgb(59, 178, 28)
+}
+
+/* button that takes up the whole width of a card */
+.fullWidthButton:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+.fullCardButton {
+    width: 450px;
+    height: 375px;
+    position: relative;
+    text-align: center;
+    border-radius: 0;
+    background-color: rgb(245,245,245);
+    display: inline-block;
+    margin-left: -400px;
+    margin-top: -25px;
+    line-height: 375px;
+    font-size: 200%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fullCardButton:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+.mainCardButton {
+    width: 450px;
+    height: 305px;
+    position:relative;
+    text-align: center;
+    border-radius: 0;
+    opacity: 0;
+    display: inline-block;
+    margin-left: -400px;
+    margin-top: -280px;
+    font-size: 200%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shareButton {
+    border:3px solid black;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height: 50px; 
+    width: 180px;
+    line-height: 45px;
+    font-size: 110%;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shareButton:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+/* used to set the position of each button individually */
+#emailButton {
+    margin: 100px 0 0 -90px;
+    outline: none;
+}
+
+#saveToComputerButton {
+    margin: -15px 0 0 -90px;
+    outline: none;
+}
+
+#socialMediaButton {
+    margin: 0 0 80px -90px;
+    outline: none;
+}
+
+#barChart {
+    font-size: 1500%;
+    color: rgb(46, 79, 201);
+    margin-top: 20px;
+}
+
+#runningImage {
+    width: 250px;
+    height: 250px;
+    margin-top: -30px;
+    margin-left: -40px;
+}
+
+#walkingImage {
+    width: 175px;
+    height: 175px;
+    margin-top: 7px;
+}
+
+
+#waterIntakeImage {
+    width: 170px;
+    height: 170px;
+    margin-top: 10px;
+}
+
+#sleepImage {
+    width: 215px;
+    height: 215px;
+    margin-left: -17px;
+    margin-top: -10px;
+}
+
+#calorieIntakeImage {
+    width: 175px;
+    height: 175px;
+    margin-top: 6px;
+}
+
+.activityIcon {
+    width: 180px;
+    height: 180px;
+    margin-left: -90px;
+    margin-top: -135px;
+   /* border: 2px solid black; */
+}
+
+.weeklyText {
+    border:3px solid black;
+    outline: none;
+    border-radius: 0;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height:67px; 
+    width: 223px;
+    line-height: 67px;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    font-size: 175%;
+    cursor: pointer;
+    transition: 0.3s
+}
+
+.weeklyText:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+
+.monthlyText {
+    border:3px solid black;
+    outline: none;
+    border-radius: 0;
+    background-color: rgb(245,245,245);
+    position:absolute;
+    height:67px; 
+    width: 224px;
+    line-height: 67px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    font-size: 175%;
+    cursor: pointer;
+    transition: 0.3s
+}
+
+.monthlyText:hover {
+    color: white;
+    background-color: rgb(205, 205, 205);
+}
+
+
+/* back button settings */
+.backButton {
+    background-color: rgba(0,0,0,0);
+    /* border: 1px solid black; */
+    border: none;
+    outline: none;
+    position:absolute;
+    height: 65px; 
+    width: 65px;
+    line-height: 65px; /* should be the same as button height */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* back button icon settings */
+.backButton i {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.backButton i:hover {
+    color: rgb(150, 150, 150);
+}
+
+/* back button settings */
+.exportButton {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    outline: none;
+    position:absolute;
+    height: 65px; 
+    width: 65px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* back button icon settings */
+.exportButton i {
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 40px;
+}
+
+.exportButton i:hover {
+    color: rgb(150, 150, 150);
+}
+
+/* properties of the streak box */
+.streak {
+    border:2px solid black;
+    position:absolute;
+    height:65px; 
+    width: 65px;
+    border-top-width: 0;
+    border-right-width: 0;
+    line-height: 65px;
+    font-size: 200%;
+    color: white;
+    background-color: red;
+    
+}
+
+.pageCount {
+    position:absolute;
+    height:65px; 
+    width: 65px;
+    line-height: 65px;
+    font-size: 200%;
+    color: black;
+}
+
+.middleOptions {
+    position:absolute;
+    height:220px; 
+    width: 380px;
+
+    margin-left: -190px; 
+    margin-top: 75px;
+    font-size: 120%;
+    color: black;
+}
+
+
+/* top spacing for selection boxes */
+.middleOptions select {
+    margin-bottom: 20px;
+   /*  margin-bottom: 4.5%; */
+    margin-top: 4px;
+}
+
+/* spacing for text boxes */
+.middleOptions input {
+    margin-bottom: 20px;
+    /* margin-bottom: 4.5%; */
+    margin-top: 4px;
+}
+
+.newActivitySpacing {
+    margin-top: 80px;
+}
+
+.goalSettingsSpacing {
+    margin-top: 45px;
+}
+
+.streakSettingsSpacing {
+    margin-top: 80px;
+}
+
+.enterDataSpacing {
+    margin-top: 45px;
+}
+
+.activitySettingSpacing {
+    margin-top: 5px;
+}
+
+.dropdown {
+    border:1.5px solid black;
+    border-radius: 4px;
+    outline: none;
+    padding: 7px;
+    background-color: rgb(245,245,245);
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown:focus {
+    background-color: rgb(225, 225, 225);
+}
+
+.textBox {
+    border: 1.5px solid black;
+    border-radius: 4px;
+    outline: none;
+    padding: 7px;
+    background-color: rgb(245,245,245);
+}
+
+.textBox:hover {
+    cursor: default;
+}
+
+.textBox:focus {
+    background-color: rgb(225, 225, 225);
+}
+
+/* sets element to top of its container */
+.top {
+    top:0
+}
+
+/* sets element to middle (vertical) of its container */
+.middle {
+    top:50%;
+}
+
+/* sets element to bottom of its container */
+.bottom {
+    bottom:0;
+}
+
+/* sets element to left of its container */
+.left {
+    left:0;
+}
+
+/* sets element to center (horizontal) of its container */
+.center {
+    left:50%;
+}
+
+/* sets element to right of its container */
+.right {
+    right:0;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
