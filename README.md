@@ -1,6 +1,6 @@
-# Health and Activity Tracker
+# Activity Tracker: A personal health and fitness tracker
 
-This website was created to learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional. See the `Health and Activity Tracker Report.pdf` for full details on the process of creating this prototype.
+This website was created to learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional. See the `Activity Tracker Report.pdf` for full details on the process of creating this prototype.
 
 ## Getting Started
 
