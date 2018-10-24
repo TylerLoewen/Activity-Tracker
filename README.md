@@ -16,7 +16,7 @@ The project is compatible with most major web browsers (Chrome, Safari, Firefox)
 
 ## Running
 
-To run the website in your browser [click here](https://tylerloewen.me/Health-and-Activity-Tracker/).
+To run the website in your browser [click here](https://tylerloewen.me/Activity-Tracker/).
 
 ## Authors
 
