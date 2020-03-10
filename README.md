@@ -1,6 +1,6 @@
 # Activity Tracker: A Personal Health and Fitness Tracker
 
-*This website was created to help learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional. See the `Activity Tracker - A Personal Health and Fitness Tracker.pdf` for full details on the process of creating this prototype.*
+*This website was created to help learn and gain an understanding of the processes involved with researching and designing a custom user interface. The website is a High-fidelity prototype and is not fully functional. See the [paper](https://github.com/TylerLoewen/Activity-Tracker/blob/master/Activity%20Tracker%20-%20A%20Personal%20Health%20and%20Fitness%20Tracker.pdf) for full details on the process of creating this prototype.*
 
 <img src="activity-tracker.PNG" width="400"/> <img src="activity-tracker2.PNG" width="400"/>
 
